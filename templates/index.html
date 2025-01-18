@@ -12,12 +12,10 @@
     </header>
     
     <div class="container">
-        <!-- Form to select guesthouse and date -->
         <div>
             <label for="guesthouseSelect">Select Guesthouse</label>
             <select id="guesthouseSelect">
                 <option value="">Select a Guesthouse</option>
-                <!-- Guesthouses will be dynamically populated -->
             </select>
         </div>
         
@@ -26,32 +24,23 @@
             <input type="date" id="date" name="date">
         </div>
         
-        <!-- Button to submit the form or fetch weather -->
         <button onclick="submitFormData()">Get Weather</button>
 
-        <!-- Weather Data -->
         <div id="weatherData">
-            <!-- Weather information will be displayed here -->
         </div>
 
-        <!-- Alternative Dates Box -->
         <div id="alternativeDates">
             <h3>Alternative Dates:</h3>
-            <!-- Alternative dates information will be dynamically populated here -->
         </div>
 
 
-        <!-- Suggested Guesthouses -->
         <div id="suggestedGuesthouses">
             <h3>Suggested Guesthouses:</h3>
-            <!-- Each guesthouse will be dynamically rendered in individual boxes -->
         </div>
     </div>
 
-    <!-- Hidden input to store selected guesthouse ID -->
     <input type="hidden" id="guesthouseId" name="guesthouseId" value="">
 
-    <!-- Script to handle frontend logic -->
     <script src="/static/script.js"></script>
 </body>
 </html>
