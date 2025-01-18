@@ -1,7 +1,6 @@
-// Fetch guesthouses and populate the dropdown
 async function loadGuesthouses() {
     try {
-        const response = await fetch('/guesthouses'); // Update with the correct endpoint to fetch guesthouses
+        const response = await fetch('/guesthouses');
         if (!response.ok) {
             throw new Error('Failed to load guesthouses');
         }
@@ -19,7 +18,6 @@ async function loadGuesthouses() {
     }
 }
 
-// Fetch weather data when the user clicks the button
 async function submitFormData() {
     const guesthouseSelect = document.getElementById('guesthouseSelect');
     const dateInput = document.getElementById('date');
@@ -44,18 +42,15 @@ async function submitFormData() {
     }
 }
 
-// Display fetched data on the frontend
 function displayWeatherData(data) {
     const weatherDataDiv = document.getElementById('weatherData');
     const alternativeDatesDiv = document.getElementById('alternativeDates');
     const suggestedGuesthousesDiv = document.getElementById('suggestedGuesthouses');
 
-    // Clear previous content
     weatherDataDiv.innerHTML = '';
     alternativeDatesDiv.innerHTML = '';
     suggestedGuesthousesDiv.innerHTML = '';
 
-    // Display weather forecast
     if (data.weather_forecast) {
         const forecastList = data.weather_forecast.map(forecast => `
             <p>${forecast.forecasted_date} at ${forecast.forecasted_time}: ${forecast.weather}</p>
@@ -63,7 +58,6 @@ function displayWeatherData(data) {
         weatherDataDiv.innerHTML = `<h3>Weather Forecast:</h3>${forecastList}`;
     }
 
-    // Display alternative dates
     if (data.alternative_dates && data.alternative_dates !== "No better days found.") {
         const alternativeList = data.alternative_dates.map(date => `
             <p>${date.date} at ${date.forecasted_time}: ${date.weather}</p>
@@ -73,7 +67,6 @@ function displayWeatherData(data) {
         alternativeDatesDiv.innerHTML = `<h3>Alternative Dates:</h3><p>${data.alternative_dates}</p>`;
     }
 
-    // Display suggested guesthouses
     if (data.suggested_guesthouses && data.suggested_guesthouses !== "No better options available.") {
         const suggestedList = data.suggested_guesthouses.map(guesthouse => `
             <div>
