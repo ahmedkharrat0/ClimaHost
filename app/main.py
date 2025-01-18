@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-#from app.routes import router as guesthouse_router
 from app.database import engine, Base, SessionLocal
 from app.weather import get_city_weather
 from app.crud import store_weather_forecast, store_guest_houses_from_csv
