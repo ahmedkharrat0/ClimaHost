@@ -1,0 +1,246 @@
+{
+	"info": {
+		"_postman_id": "d7980d9a-8589-4ad3-8aee-8e32cd142759",
+		"name": "ClimaHost",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38999604"
+	},
+	"item": [
+		{
+			"name": "Recommendation System",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/guesthouses/4/weather/2025-01-19",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"guesthouses",
+						"4",
+						"weather",
+						"2025-01-19"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Guesthouses",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/guesthouses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"guesthouses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a GuestHouse",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhaG1lZGtoYXJyYXRAdGVzdC5jb20iLCJleHAiOjE3MzcxODA0ODd9.jsEWQxxuPBQnM4G4O1SmUJaRCEf9daiSnZcUzszmGio",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"guesthouse test\",\r\n    \"location\":\"location test\",\r\n    \"city\": \"city test\",\r\n    \"amenities\": \"amenities test\",\r\n    \"ratings\": 5,\r\n    \"places_nearby\": \"places test\",\r\n    \"restaurants_cafes_nearby\": \"resto cafe test\",\r\n    \"airports_nearby\": \"airports test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/guesthouses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"guesthouses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Guesthouse",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhaG1lZGtoYXJyYXRAdGVzdC5jb20iLCJleHAiOjE3MzcxODA0ODd9.jsEWQxxuPBQnM4G4O1SmUJaRCEf9daiSnZcUzszmGio",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"UPDATED\",\r\n    \"location\":\"UPDATED\",\r\n    \"city\": \"UPDATED\",\r\n    \"amenities\": \"UPDATED\",\r\n    \"ratings\": 1,\r\n    \"places_nearby\": \"UPDATED\",\r\n    \"restaurants_cafes_nearby\": \"UPDATED\",\r\n    \"airports_nearby\": \"UPDATED\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/guesthouse/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"guesthouse",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Guesthouse",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhaG1lZGtoYXJyYXRAdGVzdC5jb20iLCJleHAiOjE3MzcxODA0ODd9.jsEWQxxuPBQnM4G4O1SmUJaRCEf9daiSnZcUzszmGio",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/guesthouse/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"guesthouse",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"ahmedkharrat@test.com\",\r\n    \"password\":\"ahmedkharrat\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"ahmedkharrat@test.com\",\r\n    \"password\":\"ahmedkharrat\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetches Weather data to DB",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/weather/tunisia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"weather",
+						"tunisia"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
